@@ -13,7 +13,15 @@
 `tsc --help`でヘルプが表示されることを確認。  
 もし tsc コマンド実行できない場合は、`npm bin -g`で global のインストール先を確認して PATH を通す。
 
-Note: Prettier の設定で、SingleQuotes と TabSize=2 を設定。
+vscode で TabSize=2 を指定。
+
+Prettier で singleQuote=true を設定。  
+[Prettier - Configuration File](https://prettier.io/docs/en/configuration.html)
+
+## TypeScript コマンド/スクリプト
+
+- コンパイル: `tsc <.js>`
+- コンパイル -> JS 実行: `ts-node <.js>`
 
 ## 進捗
 
