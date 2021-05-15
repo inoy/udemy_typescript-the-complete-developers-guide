@@ -20,8 +20,8 @@ Prettier で singleQuote=true を設定。
 
 ## TypeScript コマンド/スクリプト
 
-- コンパイル: `tsc <.js>`
-- コンパイル -> JS 実行: `ts-node <.js>`
+- コンパイル: `tsc <.ts>`
+- コンパイル -> JS 実行: `ts-node <.ts>`
 
 ## 進捗
 
