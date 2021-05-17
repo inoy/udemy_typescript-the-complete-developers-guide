@@ -23,8 +23,22 @@ Prettier で singleQuote=true を設定。
 - コンパイル: `tsc <.ts>`
 - コンパイル -> JS 実行: `ts-node <.ts>`
 
-## 進捗
+## interface vs type
 
-| 日付  | 現在 | 進捗 | 備考 |
-| ----- | ---- | ---- | ---- |
-| 05/13 | XX   | XX   |      |
+使い分けがよくわからん。
+
+```ts
+interface Window {
+  title: string;
+}
+
+interface Window {
+  ts: TypeScriptAPI;
+}
+```
+
+interface のこれが許される挙動、Window には title と ts がある、が好きではない。別名つけるべきでしょって気持ちになる。
+
+[typescript handbook - Differences Between Type Aliases and Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+
+> If you would like a heuristic, use interface until you need to use features from type.
