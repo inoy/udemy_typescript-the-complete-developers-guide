@@ -27,6 +27,12 @@ Prettier で singleQuote=true を設定。
 
 使い分けがよくわからん。
 
+[typescript handbook - Differences Between Type Aliases and Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+
+> If you would like a heuristic, use interface until you need to use features from type.
+
+interface のこれが許される挙動、Window には title と ts がある、が好きではない。別名つけるべきでしょって気持ちになる。
+
 ```ts
 interface Window {
   title: string;
@@ -37,8 +43,31 @@ interface Window {
 }
 ```
 
-interface のこれが許される挙動、Window には title と ts がある、が好きではない。別名つけるべきでしょって気持ちになる。
+interface を extends で持つべき属性を継承する感じの書き方は好き。これをメソッド引数の interface として指定する使い方は好き。
 
-[typescript handbook - Differences Between Type Aliases and Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+```ts
+interface Reportable {
+  summary(): string;
+}
 
-> If you would like a heuristic, use interface until you need to use features from type.
+interface Car extends Reportable {
+  manufacture: string;
+  broken: boolean;
+  mileage: number;
+}
+
+const oldMyVi = {
+  manufacture: 'perodua',
+  broken: false,
+  mileage: 4500,
+  summary(): string {
+    return `${this.manufacture}`;
+  },
+};
+
+const printSummary = (item: Reportable): void => {
+  console.log(item.summary());
+};
+
+printSummary(oldMyVi);
+```
