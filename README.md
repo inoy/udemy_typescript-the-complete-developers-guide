@@ -71,3 +71,27 @@ const printSummary = (item: Reportable): void => {
 
 printSummary(oldMyVi);
 ```
+
+## Class クラス
+
+### Constructor コンストラクター
+
+コンストラクターの引数にアクセス修飾子を指定すると、クラスのフィールドになる。
+
+```ts
+class Vehicle {
+  constructor(public color: string) {}
+}
+```
+
+↑ は ↓ と同じ。
+
+```ts
+class Vehicle {
+  color: string;
+
+  constructor(color: string) {
+    this.color = color;
+  }
+}
+```
