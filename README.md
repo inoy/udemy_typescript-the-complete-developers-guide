@@ -2,6 +2,13 @@
 
 [資料](https://github.com/StephenGrider/typescriptcasts)
 
+## プロジェクト
+
+### maps
+
+parcel-bundler が必要 `npm i -g parcel-bundler`  
+実行 `parcel index.html`
+
 ## TS -> JS 変換
 
 [TS - Playground](https://www.typescriptlang.org/play)
